@@ -29,90 +29,125 @@
             background: linear-gradient(rgba(27, 67, 50, 0.9), rgba(27, 67, 50, 0.9)), url('../assets/images/hero.png');
             background-size: cover;
             background-position: center;
-            padding: 20px;
+            padding: 40px 20px;
             color: var(--text-color);
         }
 
         .auth-card {
             background: var(--white);
-            padding: var(--space-xxl);
+            padding: 40px;
             border-radius: 30px;
             width: 100%;
             max-width: 500px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
             text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
-        .auth-header { margin-bottom: var(--space-xl); }
-        .auth-header img { height: 60px; margin-bottom: 10px; }
-        .auth-header h1 { font-size: 1.75rem; color: var(--primary-color); }
+        .auth-header { margin-bottom: 25px; }
+        .auth-header p { text-align: center; font-weight: 600; color: var(--primary-color); }
 
-        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group { margin-bottom: 12px; text-align: left; }
         .form-control { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #ddd; background: #f9f9f9; }
         
         .social-auth { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
         
         .btn-google {
-            background: #fff;
+            background: #ffffff;
             color: #d63031;
             border: 1px solid #d63031;
             font-weight: 600;
-            padding: 10px;
+            padding: 12px 20px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
             width: 100%;
+            transition: 0.3s ease;
+        }
+
+        .btn-google:hover {
+            background: #fdf2f2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(214, 48, 49, 0.1);
         }
 
         .btn-email-alt {
             background: #f1f2f6;
             color: #2f3542;
-            border: none;
+            border: 1px solid transparent;
             font-weight: 600;
-            padding: 10px;
+            padding: 12px 20px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
             width: 100%;
+            transition: 0.3s ease;
+        }
+
+        .btn-email-alt:hover {
+            background: #e2e4e9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .terms-group {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin: 20px 0;
+            margin: 15px 0;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        .terms-group input { margin-top: 4px; }
-        .auth-links { margin-top: 20px; font-size: 0.9rem; color: var(--text-light); }
-        .auth-links a { color: var(--primary-color); font-weight: 600; }
+        .terms-group input { margin-top: 3px; }
+        .auth-links { margin-top: 15px; font-size: 0.9rem; color: var(--text-light); }
+        .auth-links a { color: var(--primary-color); font-weight: 600; text-decoration: underline; }
+
+        /* 🔥 DARK MODE OVERRIDES */
+        [data-theme="dark"] .auth-card { background-color: #0c1d17; border: 1px solid rgba(255,255,255,0.05); }
+        [data-theme="dark"] .auth-header p { color: #52B788 !important; }
+        [data-theme="dark"] .auth-links, [data-theme="dark"] .auth-links a { color: #c8d8d0; }
+        [data-theme="dark"] .auth-links a { color: #D4A373 !important; }
+        [data-theme="dark"] label { color: #ffffff; }
+
+        [data-theme="dark"] .btn-primary { 
+            background-color: #52B788 !important; 
+            color: #0c1d17 !important; 
+            font-weight: 700;
+        }
+        [data-theme="dark"] .btn-primary:hover { background-color: #D4A373 !important; }
+        [data-theme="dark"] .btn-email-alt { background-color: #1a3227; color: #ffffff; }
+        [data-theme="dark"] .btn-email-alt:hover { background-color: #244134; }
+        [data-theme="dark"] .btn-google:hover { background-color: #f8f9fa; }
+
+        /* 🔥 MOBILE FIX (360px) */
+        @media (max-width: 480px) {
+            body { padding: 20px; }
+            .auth-card { padding: 30px 20px; border-radius: 20px; }
+            .auth-header p { font-size: 0.95rem; }
+            .navbar { height: 70px; }
+        }
     </style>
 </head>
-<body>
-<nav class="navbar">
-        <div class="container navbar-content">
+<body class="auth-page">
+    <nav class="navbar">
+        <div class="container navbar-content" style="justify-content: center;">
             <a href="index.html" class="brand">
                 <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
                 <span class="brand-text">Wildlife</span>
             </a>
-
-            
-                
-            </div>
         </div>
     </nav>
     <div class="auth-card">
         <div class="auth-header">
-           
-            <p style="text-align: center; font-weight: 600;">Every donor makes a life-saving impact.</p>
+            <p>Every donor makes impact.</p>
         </div>
 
         <form action="dashboard.html">
@@ -130,7 +165,7 @@
                     <input type="password" id="password" class="form-control" placeholder="••••••••" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
+                    <label for="confirm_password">Confirm</label>
                     <input type="password" id="confirm_password" class="form-control" placeholder="••••••••" required>
                 </div>
             </div>

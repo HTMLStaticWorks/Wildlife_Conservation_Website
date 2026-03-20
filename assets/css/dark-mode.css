@@ -27,3 +27,150 @@
     background-color: #1b4332;
     color: #ffce00;
 }
+
+/* Fix: Login button contrast in dark/night mode */
+[data-theme="dark"] .login-btn {
+    background-color: #52B788;
+    color: #0c1d17;
+}
+
+[data-theme="dark"] .login-btn:hover {
+    background-color: #D4A373;
+    color: #0c1d17;
+}
+
+/* =====================================================
+   DARK MODE: HEADING VISIBILITY FIX
+   Primary color (#1B4332) is nearly invisible on the
+   dark background (#05110E). Switch all headings to the
+   warm sandy secondary color for clear readability.
+   Brand-text is excluded — it keeps its dark green identity.
+   ===================================================== */
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: #D4A373; /* Sandy warm — high contrast on dark bg */
+}
+
+/* Card headings inside dark cards */
+[data-theme="dark"] .card h3,
+[data-theme="dark"] .card h4 {
+    color: #52B788; /* Accent leaf green — pops on dark card bg */
+}
+
+/* Paragraph text in dark mode — slightly lighter for readability */
+[data-theme="dark"] p {
+    color: #c8d8d0;
+}
+
+/* Card p text */
+[data-theme="dark"] .card p {
+    color: #a8c4b8;
+}
+
+/* Stat numbers and labels */
+[data-theme="dark"] .stat-box div {
+    color: #D4A373 !important;
+}
+
+/* roadmap step numbers background - keep brand feel */
+[data-theme="dark"] .roadmap-step {
+    background-color: #0c1d17;
+}
+
+/* Protect brand-text — must stay dark green on the light navbar/footer */
+[data-theme="dark"] .brand-text {
+    color: #1b4332 !important;
+}
+
+/* Protect footer & navbar headings (light bg) — keep dark green */
+[data-theme="dark"] footer h1,
+[data-theme="dark"] footer h2,
+[data-theme="dark"] footer h3,
+[data-theme="dark"] footer h4,
+[data-theme="dark"] footer h5,
+[data-theme="dark"] footer h6,
+[data-theme="dark"] .navbar h1,
+[data-theme="dark"] .navbar h2,
+[data-theme="dark"] .navbar h3 {
+    color: #1b4332 !important;
+}
+
+/* Species highlight section stays dark with light text */
+[data-theme="dark"] .species-highlight h2 {
+    color: #D4A373 !important;
+}
+
+/* Fix: Newsletter/Pulse of the Savanna contrast in dark mode */
+[data-theme="dark"] .newsletter-box {
+    background-color: #0c1d17; /* Darker box for dark mode */
+    border: 1px solid rgba(82, 183, 136, 0.2);
+}
+
+[data-theme="dark"] .newsletter-box h2 {
+    color: #D4A373 !important;
+}
+
+[data-theme="dark"] .newsletter-box p {
+    color: #c8d8d0 !important;
+}
+
+[data-theme="dark"] .newsletter-form input {
+    background-color: #1b4332;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .newsletter-form .btn-primary {
+    background-color: #52B788;
+    color: #0c1d17;
+}
+
+[data-theme="dark"] .newsletter-form .btn-primary:hover {
+    background-color: #D4A373;
+}
+
+/* =====================================================
+   DARK MODE: FORM & CONTACT PAGE VISIBILITY
+   Ensures form controls are clearly readable and
+   dropdowns/input boxes don't stay white.
+   ===================================================== */
+
+[data-theme="dark"] .form-container,
+[data-theme="dark"] .contact-info {
+    background-color: #0c1d17 !important;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .form-control {
+    background-color: #1a3227 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] select.form-control {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+[data-theme="dark"] select option {
+    background-color: #1a3227;
+    color: #ffffff;
+}
+
+/* Blog Page Background in Dark Mode */
+[data-theme="dark"] .blog-card {
+    background-color: #0c1d17;
+}

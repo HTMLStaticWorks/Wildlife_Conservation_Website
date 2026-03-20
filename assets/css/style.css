@@ -30,8 +30,8 @@
     --space-s: 8px;
     --space-m: 16px;
     --space-l: 24px;
-    --space-xl: 32px;
-    --space-xxl: 64px;
+    --space-xl: 40px;
+    --space-xxl: 100px;
 
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -84,15 +84,23 @@ ul {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     text-align: center;
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-l);
     color: var(--primary-color);
     text-transform: capitalize;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-bottom: 14px;
 }
 
 p {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto var(--space-l);
+    margin: 0 auto 36px;
 }
 
 .container {
@@ -103,6 +111,13 @@ p {
 
 section {
     padding: var(--space-xxl) 0;
+}
+
+/* Fix: when section also has .container class, it only gets horizontal padding.
+   Force vertical padding explicitly so content doesn't merge. */
+section.container {
+    padding-top: var(--space-xxl);
+    padding-bottom: var(--space-xxl);
 }
 
 /* Typography Scale */
@@ -125,6 +140,17 @@ h3 { font-size: 1.75rem; font-weight: 600; }
     font-family: var(--font-heading);
     font-size: 1rem;
     text-align: center;
+}
+
+/* Pagination Utilities */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gap-m {
+    gap: var(--space-m);
 }
 
 .btn-primary {
@@ -297,20 +323,24 @@ footer .footer-links a, footer p { color: var(--text-color) !important; }
 /* Card System */
 .cards-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;      /* Mobile: 1 column */
     gap: var(--space-xl);
-    margin-top: var(--space-xl);
+    margin-top: 48px;
+    align-items: stretch;
+    justify-items: stretch;
 }
 
-@media (min-width: 600px) {
+/* 768px and below: stay 1 column (vertical stack) */
+@media (min-width: 769px) and (max-width: 1023px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* 1024px+: 3 equal columns */
 @media (min-width: 1024px) {
     .cards-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -609,19 +639,10 @@ footer {
     h1 { font-size: 2rem; }
 }
 /* --- Responsive Grid & Layout Fixes --- */
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--space-l);
-}
+/* NOTE: .container canonical definition is at the top of this file.
+   Duplicate removed to avoid overriding section.container vertical padding. */
 
-.cards-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: var(--space-xl);
-}
-
+/* cards-grid responsive (duplicate removed - canonical definition above) */
 @media (min-width: 768px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -729,17 +750,7 @@ footer {
     display: block;
     margin: 0 auto;
 }
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards in first row */
-    gap: 2rem;
-}
-
-.cards-grid .card:nth-child(3) {
-    grid-column: 1 / -1;   /* Take full row */
-    justify-self: center;  /* Center horizontally */
-    max-width: 400px;      /* Optional: control width */
-}
+/* nth-child(3) full-width rule removed — all 6 cards now equal width in the 3-col grid */
 
 /* User Specific Layout Fix (Mobile 360px Vertical Stack) */
 @media (max-width: 360px) {
@@ -927,7 +938,7 @@ body.dark-mode .footer-desc {
     height: 100%;
     object-fit: cover;
     clip-path: none; /* Removed the split-screen clip path */
-    filter: blur(5px) brightness(0.4); /* Darkened and blurred for premium background feel */
+    filter: blur(1px) brightness(0.4); /* Slightly blurred for premium background feel */
     opacity: 1;
     z-index: 1;
     transition: var(--transition);
@@ -990,11 +1001,7 @@ body.dark-mode .footer-desc {
     display: block;
     margin: 0 auto;
 }
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards in first row */
-    gap: 2rem;
-}
+/* cards-grid 3rd duplicate removed - canonical definition at top of file */
 
 .cards-grid .card:nth-child(3) {
     grid-column: 1 / -1;   /* Take full row */
@@ -1201,31 +1208,28 @@ body.dark-mode .footer-desc {
 }
 .ambassador-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards */
+    grid-template-columns: 1fr;       /* Mobile: 1 column */
     gap: var(--space-xl);
     margin-top: var(--space-m);
 }
 
-/* Center the 3rd card */
-.ambassador-grid .card:nth-child(3) {
-    grid-column: 1 / -1;   /* full row */
-    justify-self: center;  /* center horizontally */
-    max-width: 400px;
+/* Tablet: 2 columns */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .ambassador-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop 1024px+: 3 equal columns — all 3 cards in one row */
+@media (min-width: 1024px) {
+    .ambassador-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Remove any overflow issues */
 .ambassador-grid .card {
     width: 100%;
-}
-@media (max-width: 768px) {
-    .ambassador-grid {
-        grid-template-columns: 1fr; /* stack */
-    }
-
-    .ambassador-grid .card:nth-child(3) {
-        grid-column: auto;
-        max-width: 100%;
-    }
 }
 /* ===== GALLERY GRID ===== */
 .gallery-grid {
@@ -1529,4 +1533,85 @@ img {
     .species-highlight {
         grid-template-columns: 1fr !important; 
     }
+}
+.blog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center the button */
+.blog-content .btn {
+    margin-top: auto;   /* pushes button to bottom */
+    align-self: center; /* centers horizontally */
+}
+/* User section */
+.user-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image */
+.user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* makes circle */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #2ecc71; /* optional green ring */
+}
+
+/* Name */
+.user-info h4 {
+    margin: 5px 0;
+}
+
+/* Role */
+.user-info small {
+    opacity: 0.7;
+}
+.species-info h2 {
+    text-align: center;
+}
+/* Grid */
+.ambassador-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr; /* mobile */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .ambassador-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* KEY FIX */
+    }
+}
+.card {
+    width: 100%; /* ensures full grid usage */
+}
+/* User section */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Image */
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* circle */
+    object-fit: cover;
+}
+
+/* Name */
+.user h4 {
+    margin: 0;
+}
+
+/* Role */
+.user small {
+    opacity: 0.7;
 }
