@@ -28,6 +28,16 @@
     color: #ffce00;
 }
 
+[data-theme="dark"] .btn-primary {
+    background-color: #52B788;
+    color: #0c1d17;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: #D4A373;
+    color: #0c1d17;
+}
+
 /* Fix: Login button contrast in dark/night mode */
 [data-theme="dark"] .login-btn {
     background-color: #52B788;

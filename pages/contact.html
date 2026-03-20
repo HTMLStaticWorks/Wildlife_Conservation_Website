@@ -25,17 +25,26 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-xxl);
+            gap: var(--space-xl);
             margin-top: var(--space-xl);
-            align-items: flex-start;
+            align-items: stretch; /* Cards will have same height */
         }
 
-        .contact-info { padding: var(--space-xl); background: var(--white); border-radius: 20px; box-shadow: var(--shadow-soft); }
-        .contact-info h2 { text-align: left; margin: 0 0 20px; }
+        .contact-info, .form-container { 
+            padding: var(--space-xl); 
+            background: var(--white); 
+            border-radius: 20px; 
+            box-shadow: var(--shadow); 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .contact-info h2, .form-container h2 { text-align: left; margin: 0 0 30px; }
         .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
         .contact-item i { font-size: 1.5rem; color: var(--accent-color); margin-top: 5px; }
 
-        .form-container { background: var(--white); padding: var(--space-xl); border-radius: 20px; box-shadow: var(--shadow); }
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-control { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd; background: #f9f9f9; font-family: var(--font-body); }
         .form-control:focus { outline: none; border-color: var(--accent-color); background: #fff; }
@@ -111,7 +120,7 @@
             <h1>Get in Touch</h1>
             <p>Have questions about our missions or donor programs? Our global team is standing by to assist you and provide the information you need.</p>
             <div class="hero-btns">
-                <a href="#contactForm" class="btn btn-secondary">Send a Message</a>
+                <a href="#contactForm" class="btn btn-secondary ">Send a Message</a>
                 <a href="" class="btn btn-outline" style="border-color: #fff; color: #fff;">Donor Support</a>
             </div>
         </div>
