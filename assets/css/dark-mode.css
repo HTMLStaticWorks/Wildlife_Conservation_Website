@@ -1,0 +1,29 @@
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] body {
+    background-color: #05110e;
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .card {
+    background-color: #0c1d17;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .nav-links {
+    background-color: #0c1d17;
+}
+
+[data-theme="dark"] .btn-outline {
+    border-color: #52B788;
+    color: #52B788;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background-color: #52B788;
+    color: #0c1d17;
+}
+
+[data-theme="dark"] .theme-toggle {
+    background-color: #1b4332;
+    color: #ffce00;
+}

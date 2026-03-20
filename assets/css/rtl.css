@@ -1,0 +1,29 @@
+/* RTL Support */
+[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .nav-links {
+    right: auto;
+    left: -100%;
+}
+
+[dir="rtl"] .nav-links.active {
+    left: 0;
+}
+
+[dir="rtl"] .footer-col h4,
+[dir="rtl"] .footer-col p {
+    text-align: right;
+}
+
+[dir="rtl"] .btn i {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+[dir="rtl"] .nav-item::after {
+    left: auto;
+    right: 0;
+}

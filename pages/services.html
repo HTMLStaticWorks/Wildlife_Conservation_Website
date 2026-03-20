@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Missions - Strategic Conservation Strategies</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <style>
+        .detailed-service {
+            display: flex;
+            gap: var(--space-xxl);
+            align-items: center;
+            margin-bottom: var(--space-xxl);
+        }
+
+        .detailed-service {
+            display: flex;
+            gap: var(--space-xxl);
+            align-items: center;
+            margin-bottom: var(--space-xxl);
+        }
+
+        .detailed-service:nth-child(even) { flex-direction: row-reverse; }
+
+        .service-img {
+            flex: 1;
+            border-radius: 40px;
+            box-shadow: var(--shadow);
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .service-info { flex: 1; }
+        .service-info h2 { text-align: left; margin-left: 0; }
+        .service-info p { text-align: left; margin-left: 0; }
+
+        @media (max-width: 768px) {
+            .detailed-service { flex-direction: column !important; }
+        }
+    </style>
+</head>
+<body class="main-site">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="brand">
+                <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                <span class="brand-text">Wildlife</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="home2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item active">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary login-btn">Login</a>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero-section">
+        <img src="../assets/images/service.png" alt="Missions" class="hero-image">
+        <div class="container hero-content">
+            <h1>Our Conservation Missions</h1>
+            <p>Four strategic pillar missions for global protection. We use advanced technology to safeguard fragile ecosystems and their inhabitants.</p>
+            <div class="hero-btns">
+                <a href="register.html" class="btn btn-secondary">Support Missions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Missions -->
+    <section class="container reveal">
+
+        
+
+        <div class="detailed-service">
+            <img src="https://media.istockphoto.com/id/1185317987/photo/mother-and-baby-rhino-getting-ready-to-drink.jpg?s=612x612&w=0&k=20&c=CdDoIFUwSEqOpyXj457exFu51jJr4CtYARg2ALMgAKc=" alt="Rhinoceros" class="service-img">
+            <div class="service-info">
+                <h2 style="text-align: center;">Rhi-No-Fear Mission</h2>
+                <p style="text-align: center;">Combating illegal wildlife trade through DNA tracking, rapid response teams, and community awareness programs.</p>
+                <ul style="margin-top: 1rem; padding-left: 0;">
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        3,000+ Rhinos Tracked Daily
+                    </li>
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        90% Poaching Reduction daily
+                    </li>
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        40 Dedicated Ranger Posts in
+                    </li>
+                </ul>
+                <a href="register.html" class="btn btn-primary" style="margin-top: 2rem;">Donate to Rhi-No-Fear</a>
+            </div>
+        </div>
+
+<div class="detailed-service">
+    <img src="https://www.azocleantech.com/images/news/ImageForNews_35689_17459101807281434.jpg" alt="Sea Turtle" class="service-img">
+    <div class="service-info">
+        <h2 style="text-align: center;">Ocean Guardian Initiative</h2>
+        <p style="text-align: center;">Safeguarding marine life through reef restoration, rescue missions, and continuous ocean monitoring systems.</p>
+        <ul style="margin-top: 1rem; padding-left: 0;">
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                200+ Coral Reefs Restored
+            </li>
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                1,500 Marine Animals Rescued
+            </li>
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                24/7 Ocean Monitoring
+            </li>
+        </ul>
+        <a href="register.html" class="btn btn-secondary" style="margin-top: 2rem;">Protect Our Oceans</a>
+    </div>
+</div>
+
+        <div class="detailed-service">
+            <img src="https://bigthink.com/wp-content/uploads/2019/08/origin-166.jpg?w=640" alt="Tiger" class="service-img">
+            <div class="service-info">
+                <h2 style="text-align: center;">Bengal Tiger Resurgence</h2>
+                <p style="text-align: center;">Rebuilding tiger habitats using AI monitoring, community support, and sustainable conservation strategies.</p>
+                <ul style="margin-top: 1rem; padding-left: 0;">
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        2,000 AI Smart Cameras Deployed
+                    </li>
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        Village Compensation Fund Established
+                    </li>
+                    <li style="display: flex; align-items: center;">
+                        <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                        15% Increase in Tiger Births
+                    </li>
+                </ul>
+                <a href="register.html" class="btn btn-secondary" style="margin-top: 2rem;">Fund Bengal Corridors</a>
+            </div>
+        </div>
+
+        <div class="detailed-service">
+    <img src="https://thumbs.6sqft.com/wp-content/uploads/2024/09/09102751/The-Great-Elephant-Migration-Close-Up-3.jpg?format=webp" alt="Elephant" class="service-img">
+    <div class="service-info">
+        <h2 style="text-align: center;">Elephant Migration Shield</h2>
+        <p style="text-align: center;">Protecting elephant migration routes through satellite tracking, smart barriers, and conflict reduction systems.</p>
+        <ul style="margin-top: 1rem; padding-left: 0;">
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                5,000+ Elephants Monitored
+            </li>
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                120 Smart Barriers Installed
+            </li>
+            <li style="display: flex; align-items: center;">
+                <i class="fas fa-check" style="color: var(--accent-color); margin-right: 10px;"></i>
+                60% Conflict Reduction
+            </li>
+        </ul>
+        <a href="register.html" class="btn btn-primary" style="margin-top: 2rem;">Support Elephant Routes</a>
+    </div>
+    
+</div>
+
+</section>
+
+    <!-- FAQ Section -->
+    <section style="background-color: var(--white);" class="reveal">
+        <div class="container text-center">
+            <h2>Common Questions</h2>
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <div class="card" style="align-items: flex-start; text-align: left;">
+                    <h4>How do you use my donation?</h4>
+                    <p style="text-align: left; margin: 0;">85% of every dollar goes directly to the field operations, including ranger gear, vet supplies, and community grants.</p>
+                </div>
+                <div class="card" style="align-items: flex-start; text-align: left;">
+                    <h4>Can I visit a project site?</h4>
+                    <p style="text-align: left; margin: 0;">We offer 'Supporter Safaris' for our platinum donors to see the impact first-hand without disturbing the wildlife.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand">
+                        <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                        <span class="brand-text">Wildlife</span>
+                    </a>
+<p class="footer-desc">
+    Dedicated to the preservation of biodiversity through technology, community action, and heart.
+</p>                       <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Missions</a></li>
+                        <li><a href="blog.html">Nature Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="dashboard.html">Donor Dashboard</a></li>
+                        <li><a href="register.html">Become a Partner</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wildlife Non-Profit. All rights reserved. | Built with &hearts; for the Planet.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

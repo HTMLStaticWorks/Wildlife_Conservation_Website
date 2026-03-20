@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Our Journey to Save the Wild</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: var(--space-xxl) auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: var(--space-xxl) auto;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item::before { display: none; }
+        }
+    </style>
+</head>
+<body class="main-site">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="brand">
+                <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                <span class="brand-text">Wildlife</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="home2.html" class="nav-item">Home 2</a></li>
+                <li><a href="about.html" class="nav-item active">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary login-btn">Login</a>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero-section">
+        <img src="../assets/images/about.png" alt="Our Legacy" class="hero-image">
+        <div class="container hero-content">
+            <h1>Our Mission & Legacy</h1>
+            <p>More than a decade of frontline conservation. We've dedicated our lives to protecting the world's most vulnerable species through community action and scientific rigor.</p>
+            <div class="hero-btns">
+                <a href="#journey" class="btn btn-secondary">Explore Our Journey</a>
+                <a href="services.html" class="btn btn-outline" style="border-color: #fff; color: #fff;">Our Missions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="container reveal">
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>To end extinction by empowering local leaders and deploying revolutionary field technologies in the world's most vulnerable habitats.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>A world where majestic wildlife and human progress thrive in perpetual harmony, supported by transparent and actionable conservation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section style="background-color: var(--white);" class="reveal">
+        <div class="container text-center">
+            <h2>The Heart of the Savanna</h2>
+            <p>Founded in 2012, Wildlife began as a small troop of rangers in East Africa. Today, we manage over 15 million hectares of land across three continents. Our approach is unique: we don't just protect animals; we build economies around their survival.</p>
+<img 
+    src="https://eco-tourism.expert/upload/medialibrary/63f/08rm3x408qwyxkb9g5q1eh06c51pjks7.jpeg" 
+    alt="Ranger" 
+    class="savanna-img">        </div>
+    </section>
+
+    <!-- Legacy Timeline -->
+    <section class="container reveal">
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>2012: The Foundation</h4>
+                <p>Started by Dr. Elena Vance with just 5 rangers and a dream to stop ivory poaching.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>2015: Tech Expansion</h4>
+                <p>Deployed the first satellite-linked GPS collars to track elephant migraton in real-time.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>2018: Global Coalition</h4>
+                <p>Partnered with 20 nations to create the 'Amazon Corridor' project.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>2023: Impact Threshold</h4>
+                <p>Surpassed 1 million trees planted and 50 endangered species back from the brink.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand">
+                        <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                        <span class="brand-text">Wildlife</span>
+                    </a>
+<p class="footer-desc">
+    Dedicated to the preservation of biodiversity through technology, community action, and heart.
+</p>                       <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Missions</a></li>
+                        <li><a href="blog.html">Nature Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="dashboard.html">Donor Dashboard</a></li>
+                        <li><a href="register.html">Become a Partner</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wildlife Non-Profit. All rights reserved. | Built with &hearts; for the Planet.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

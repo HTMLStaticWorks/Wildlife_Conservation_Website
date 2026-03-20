@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife - Nature's Last Stand</title>
+    <meta name="description" content="Discover our innovative conservation strategies and how you can fund the protection of our planet's most majestic creatures.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+    <style>
+        .service-row {
+            display: flex;
+            gap: var(--space-xl);
+            align-items: stretch;
+            margin-top: var(--space-xl);
+        }
+
+        .service-item-h2 {
+            flex: 1;
+            padding: var(--space-xl);
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .service-item-h2:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .hero-2-img { width: 100%; opacity: 0.3; clip-path: none; }
+            .hero-2-content { width: 100%; text-align: center; }
+            .hero-2-content h1, .hero-2-content p { text-align: center; }
+            .service-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body class="main-site">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="index.html" class="brand">
+                <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                <span class="brand-text">Wildlife</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="home2.html" class="nav-item active">Home 2</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+                <li><a href="services.html" class="nav-item">Services</a></li>
+                <li><a href="blog.html" class="nav-item">Blog</a></li>
+                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="dashboard.html" class="nav-item">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary login-btn">Login</a>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="../assets/images/hero.png" alt="Hero" class="hero-image">
+        <div class="container hero-content">
+            <h1>Restore the Wild.</h1>
+            <p>Our planet is losing species at an alarming rate. We are the vanguard of a new era of proactive, technology-driven conservation.</p>
+            <div class="hero-btns">
+                <a href="register.html" class="btn btn-secondary">Get Started</a>
+                <a href="services.html" class="btn btn-outline" style="border-color: #fff; color: #fff;">Explore Missions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions Variations -->
+    <section class="container reveal">
+        <h2>Mission Critical Areas</h2>
+        <div class="service-row">
+            <div class="service-item-h2 text-center">
+                <i class="fas fa-leaf" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3>Reforestation</h3>
+                <p>Planting millions of trees to rebuild native habitats for endangered primates.</p>
+            </div>
+            <div class="service-item-h2 text-center">
+                <i class="fas fa-water" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3>Marine Protection</h3>
+                <p>Patrolling coral reefs and preventing illegal fishing in protected waters.</p>
+            </div>
+            <div class="service-item-h2 text-center">
+                <i class="fas fa-satellite" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3>Global Monitoring</h3>
+                <p>Using satellite data to predict and prevent human-wildlife conflict zones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Storytelling Section -->
+    <section style="background-color: var(--white);" class="reveal">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xxl); align-items: center;">
+            <div>
+                <img src="../assets/images/about.png" alt="Story" style="border-radius: 40px; box-shadow: var(--shadow);">
+            </div>
+            <div class="text-left">
+                <h2>The Power of Storytelling</h2>
+                <p style="text-align: left; margin-left: 0;">We don't just provide data; we tell the stories of survival. Follow 'Kibale', the last mountain gorilla of her troop, through our weekly virtual patrol updates.</p>
+                <div style="display: flex; gap: var(--space-m);">
+                    <div style="background: var(--bg-color); padding: 20px; border-radius: 15px; flex: 1; text-align: center;">
+                        <h4 style="margin: 0; color: var(--primary-color);">1.2M+</h4>
+                        <small>Trees Planted</small>
+                    </div>
+                    <div style="background: var(--bg-color); padding: 20px; border-radius: 15px; flex: 1; text-align: center;">
+                        <h4 style="margin: 0; color: var(--primary-color);">450+</h4>
+                        <small>Species Saved</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials 2 -->
+    <section class="container reveal">
+    <h2>Global Ambassadors</h2>
+
+    <div class="ambassador-grid">
+        <div class="card">
+            <p>"Wildlife Foundation empowers the local voice. I’ve seen the impact on my village first-hand."</p>
+            <h4>Abeba Kwesi</h4>
+            <small>Local Community Leader</small>
+        </div>
+
+        <div class="card">
+            <p>"The dashboard is addictive. I love seeing exactly where my $10 a month is going."</p>
+            <h4>John Doe</h4>
+            <small>Sustaining Donor</small>
+        </div>
+
+        <div class="card">
+            <p>"Technology and Nature finally meeting. A beautiful intersection of hope."</p>
+            <h4>Elena Rossi</h4>
+            <small>Nature Photographer</small>
+        </div>
+    </div>
+</section>
+
+    <!-- EXTRA SECTION 1: VOLUNTEER ROADMAP -->
+    <section class="container reveal">
+        <h2 class="text-center">Become a Field Guardian</h2>
+        <p>Three simple steps to join our frontline conservation teams across the globe.</p>
+        <div class="roadmap-grid">
+            <div class="roadmap-step">
+                <div class="step-num">1</div>
+                <h3>Apply & Train</h3>
+                <p>Submit your application and complete our 4-week virtual conservation certification.</p>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-num">2</div>
+                <h3>Get Deployed</h3>
+                <p>Choose your mission corridor and join a local team for habitat monitoring.</p>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-num">3</div>
+                <h3>Scale Impact</h3>
+                <p>Share your field stories and help us recruit more guardians for the wild.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXTRA SECTION 2: FIELD GALLERY -->
+    <section style="background-color: var(--white);" class="reveal">
+    <div class="container text-center">
+        <h2>Captured on Camera</h2>
+        <p>Recent photos submitted by our rangers and AI monitoring units.</p>
+
+        <div class="gallery-grid">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTblr_vgiVm1stMWAIOPnOwCK_E_u8vumuuuA&s" alt="Gallery 1">
+            <img src="https://images.pexels.com/photos/1642070/pexels-photo-1642070.jpeg?cs=srgb&dl=pexels-sawibythepixels-1642070.jpg&fm=jpg" alt="Gallery 2">
+            <img src="https://c02.purpledshub.com/uploads/sites/41/2025/02/GOLD_Tom-Nickels_Polar-retriever.jpg?w=1200&webp=1" alt="Gallery 3">
+            <img src="https://media.istockphoto.com/id/108348088/photo/red-eyed-tree-frog.jpg?s=612x612&w=0&k=20&c=-6kS86oSlyC2oWCLuDpDFeAxArnUpQ2DcUNlXtRjR04=" alt="Gallery 4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThr3ZPVKdOIljHaMqJeoU13XD8GLuPtXVvCw&s" alt="Gallery 5">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpp6wIZijleigxZdKcb8-Q2hNDnEq3awVFWg&s" alt="Gallery 6">
+            <img src="https://img.freepik.com/free-photo/flying-frog-closeup-face-branch-javan-tree-frog-closeup-image-rhacophorus-reinwartii-green-leaves_488145-1673.jpg?semt=ais_hybrid&w=740&q=80" alt="Gallery 7">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS06xbrXZ3XRinLaKRxcwurW0Eq6oYgQOoC_w&s" alt="Gallery 8">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhi-9vK7Drtnmhgmabk8uj0TBioVmsYQFXZw&s" alt="Gallery 9">
+            <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdpbGRsaWZlfGVufDB8fDB8fHww" alt="Gallery 10">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20240715/pngtree-national-bird-of-panama-high-quality-4k-ultra-hd-free-photo-image_16003471.jpg" alt="Gallery 11">
+            <img src="https://e3.365dm.com/18/12/736x414/skynews-wildlife-photographer_4507687.jpg?20181203130930" alt="Gallery 12">
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/01/15/red-panda-1851650_1280.jpg" alt="Gallery 13">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ__FCgcba2E4BwJNWDQiX82WWi8rNK3gcsmQ&s" alt="Gallery 14">
+            <img src="https://www.pngmagic.com/webp_images/how-to-edit-wildlife-photos-in-lightroom_PI4.webp" alt="Gallery 15">
+            <img src="https://i.natgeofe.com/n/8099d7d2-ba63-4f16-a68d-43911be54c1c/26404.jpg" alt="Gallery 16">
+        </div>
+    </div>
+</section>
+
+    <!-- EXTRA SECTION 3: NEWSLETTER -->
+    <section class="newsletter-section reveal">
+    <div class="container">
+        <div class="newsletter-box">
+            <h2>Pulse of the Savanna</h2>
+            <p>Get exclusive field reports and virtual patrol highlights delivered to your inbox.</p>
+
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="brand">
+                        <img src="../assets/images/favicon.png" alt="Wildlife" class="brand-logo">
+                        <span class="brand-text">Wildlife</span>
+                    </a>
+<p class="footer-desc">
+    Dedicated to the preservation of biodiversity through technology, community action, and heart.
+</p>                       <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Missions</a></li>
+                        <li><a href="blog.html">Nature Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="dashboard.html">Donor Dashboard</a></li>
+                        <li><a href="register.html">Become a Partner</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wildlife Non-Profit. All rights reserved. | Built with &hearts; for the Planet.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
