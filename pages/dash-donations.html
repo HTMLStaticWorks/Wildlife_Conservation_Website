@@ -99,7 +99,21 @@
             background: white;
             padding: 15px 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 30px;
+            z-index: 1000;
+        }
+
+        .top-bar::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            height: 30px;
+            background: var(--dash-bg);
+            z-index: -1;
         }
 
         .user-profile { display: flex; align-items: center; gap: 15px; }
@@ -292,34 +306,66 @@
                     <h3>Active Subscription</h3>
                     <div class="donation-status" style="margin-bottom: 20px;">
                         <div>
-                            <p style="text-align:left; margin:0; font-size:0.85rem;">$25.00 / Month targeting Amazon Rescue</p>
+                            <p style="text-align:left; margin:0; font-size:0.85rem;">$25.00 / Month targeting Amazon </p>
                             <small style="color:var(--success); font-weight: bold;">Active</small>
                         </div>
-                        <button class="btn btn-primary" style="padding: 10px 20px;">Manage Plan</button>
-                    </div>
+<button class="btn btn-primary" 
+        style="padding: 10px 20px; background-color:#52B788; color:#0c1d17; font-weight:600;">
+    Manage Plan
+</button>                    </div>
                     
                     <h3>Billing History</h3>
                     <table style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
                         <tr style="border-bottom: 1px solid #eee; color: #777;">
                             <th style="padding: 15px 10px;">Date</th>
-                            <th style="padding: 15px 10px;">Amount</th>
-                            <th style="padding: 15px 10px;">Status</th>
+                            <th style="padding: 15px 8px;">Amount</th>
+                            <th style="padding: 15px 30px;">Status</th>
                         </tr>
                         <tr style="border-bottom: 1px solid #eee;">
                             <td style="padding: 15px 10px;">March 01, 2026</td>
                             <td style="padding: 15px 10px; font-weight: bold;">$25.00</td>
-                            <td style="padding: 15px 10px;"><span style="color: var(--success); background: #e8f5e9; padding: 5px 10px; border-radius: 10px; font-size: 0.8rem;">Successful</span></td>
-                        </tr>
+<td style="padding: 15px 10px;">
+    <span style="
+        color: #0d750d;
+        background: #fefffe;
+        padding: 6px 14px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    ">
+        Successful
+    </span>
+</td>                        </tr>
                         <tr style="border-bottom: 1px solid #eee;">
                             <td style="padding: 15px 10px;">February 01, 2026</td>
                             <td style="padding: 15px 10px; font-weight: bold;">$25.00</td>
-                            <td style="padding: 15px 10px;"><span style="color: var(--success); background: #e8f5e9; padding: 5px 10px; border-radius: 10px; font-size: 0.8rem;">Successful</span></td>
-                        </tr>
+<td style="padding: 15px 10px;">
+    <span style="
+        color: #0d750d;
+        background: #fefffe;
+        padding: 6px 14px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    ">
+        Successful
+    </span>
+</td>                         </tr>
                         <tr style="border-bottom: 1px solid #eee;">
                             <td style="padding: 15px 10px;">January 01, 2026</td>
                             <td style="padding: 15px 10px; font-weight: bold;">$25.00</td>
-                            <td style="padding: 15px 10px;"><span style="color: var(--success); background: #e8f5e9; padding: 5px 10px; border-radius: 10px; font-size: 0.8rem;">Successful</span></td>
-                        </tr>
+<td style="padding: 15px 10px;">
+    <span style="
+        color: #0d750d;
+        background: #fefffe;
+        padding: 6px 14px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 600;
+    ">
+        Successful
+    </span>
+</td>                         </tr>
                     </table>
                 </div>
 

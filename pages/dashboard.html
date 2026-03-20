@@ -99,7 +99,22 @@
             background: white;
             padding: 15px 30px;
             border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 30px;
+            z-index: 1000;
+        }
+
+        /* Curtain fix: hide scrolling content behind the gap above the sticky header */
+        .top-bar::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            height: 30px;
+            background: var(--dash-bg);
+            z-index: -1;
         }
 
         .user-profile { display: flex; align-items: center; gap: 15px; }
@@ -343,9 +358,8 @@
                             <p style="text-align:left; margin:0; font-size:0.85rem;">$25.00 / Month</p>
                             <small style="color:var(--success);">Active since Jan 2026</small>
                         </div>
-                        <a href="#" style="color:var(--primary-color); font-size:1.25rem;"><i class="fas fa-edit"></i></a>
+                        <a href="#" style="color:var(--primary-bold); font-size:1.25rem;"><i class="fas fa-edit"></i></a>
                     </div>
-                    <button class="btn btn-primary" style="width:100%; margin-top:20px; padding:10px;">Upgrade Mission</button>
                     <p style="margin-top:15px; font-size:0.8rem;">Next billing: April 01, 2026</p>
                 </div>
 

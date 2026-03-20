@@ -94,7 +94,6 @@
             <h1>Restore the Wild.</h1>
             <p>Our planet is losing species at an alarming rate. We are the vanguard of a new era of proactive, technology-driven conservation.</p>
             <div class="hero-btns">
-                <a href="register.html" class="btn btn-secondary">Get Started</a>
                 <a href="services.html" class="btn btn-outline" style="border-color: #fff; color: #fff;">Explore Missions</a>
             </div>
         </div>
@@ -130,14 +129,14 @@
             </div>
             <div class="text-left">
                 <h2>The Power of Storytelling</h2>
-                <p style="text-align: left; margin-left: 0;">We don't just provide data; we tell the stories of survival. Follow 'Kibale', the last mountain gorilla of her troop, through our weekly virtual patrol updates.</p>
+                <p style="text-align: center;">We don't just provide data; we tell the stories of survival. Follow 'Kibale', the last mountain gorilla of her troop, through our weekly virtual patrol updates.</p>
                 <div style="display: flex; gap: var(--space-m);">
                     <div style="background: var(--bg-color); padding: 20px; border-radius: 15px; flex: 1; text-align: center;">
-                        <h4 style="margin: 0; color: var(--primary-color);">1.2M+</h4>
+                        <h4 style="margin: 0; color: var(--primary-bold);">1.2M+</h4>
                         <small>Trees Planted</small>
                     </div>
                     <div style="background: var(--bg-color); padding: 20px; border-radius: 15px; flex: 1; text-align: center;">
-                        <h4 style="margin: 0; color: var(--primary-color);">450+</h4>
+                        <h4 style="margin: 0; color: var(--primary-bold);">450+</h4>
                         <small>Species Saved</small>
                     </div>
                 </div>
@@ -301,5 +300,46 @@
 
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
+    <!-- Back to Top Button -->
+<button id="backToTopBtn"
+    style="
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: none;
+        background-color: #52B788;
+        color: #0c1d17;
+        border: none;
+        padding: 12px 16px;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        z-index: 999;
+    "
+    onclick="scrollToTop()">
+    ↑
+</button>
+
+<script>
+    const btn = document.getElementById("backToTopBtn");
+
+    // Show button on scroll
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+
+    // Scroll to top smoothly
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
 </body>
 </html>
