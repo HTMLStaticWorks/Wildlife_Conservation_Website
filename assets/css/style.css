@@ -1615,3 +1615,78 @@ img {
 .user small {
     opacity: 0.7;
 }
+
+/* --- Hero 3D Text Effects --- */
+.hero-content h1, 
+.hero-content p {
+    perspective: 1000px;
+}
+
+.hero-3d-word {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: default;
+    margin: 0 4px; /* Space between words */
+}
+
+/* Base 3D State */
+.hero-3d-word span {
+    display: inline-block;
+    color: inherit;
+    text-shadow: 
+        1px 1px 0 rgba(0,0,0,0.2),
+        2px 2px 0 rgba(0,0,0,0.2),
+        3px 3px 0 rgba(0,0,0,0.2),
+        4px 4px 0 rgba(0,0,0,0.2),
+        5px 5px 15px rgba(0,0,0,0.4);
+    transition: var(--transition);
+}
+
+/* Organic Floating Animation (Swaying like leaves/grass) */
+@keyframes wordFloat {
+    0%, 100% { transform: translateY(0) rotateX(0deg) rotateZ(0deg) scale(1); }
+    25% { transform: translateY(-15px) rotateX(12deg) rotateZ(3deg) scale(1.03); }
+    50% { transform: translateY(-5px) rotateX(5deg) rotateZ(-2deg) scale(0.97); }
+    75% { transform: translateY(-12px) rotateX(-8deg) rotateZ(1deg) scale(1.01); }
+}
+
+.hero-3d-word.animated {
+    animation: wordFloat 4s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+/* Interaction */
+.hero-3d-word:hover {
+    transform: translateZ(50px) scale(1.1);
+}
+
+.hero-3d-word:hover span {
+    color: var(--accent-color);
+    text-shadow: 
+        0 1px 0 #52b788,
+        0 2px 0 #52b788,
+        0 3px 0 #46a578,
+        0 4px 0 #3b9068,
+        0 5px 10px rgba(82, 183, 136, 0.5);
+}
+
+/* Wildlife Related Glow */
+.hero-3d-word::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(82, 183, 136, 0.2) 0%, transparent 70%);
+    transform: translate(-50%, -50%) translateZ(-1px);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.hero-3d-word:hover::after {
+    opacity: 1;
+}

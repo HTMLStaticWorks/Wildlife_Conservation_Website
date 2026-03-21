@@ -8,7 +8,69 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initScrollReveal();
     initForms();
+    initHero3D();
 });
+
+/**
+ * 3D Text Effect for Hero Sections
+ */
+function initHero3D() {
+    const heroElements = document.querySelectorAll('.hero-content h1, .hero-content p');
+    
+    heroElements.forEach(element => {
+        const text = element.textContent;
+        const words = text.split(' ');
+        
+        element.innerHTML = ''; // Clear original text
+        
+        words.forEach((word, index) => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'hero-3d-word animated';
+            
+            // Inner span for 3D depth effect
+            const innerSpan = document.createElement('span');
+            innerSpan.textContent = word;
+            
+            // Add a non-breaking space after the word (except the last one)
+            const space = (index < words.length - 1) ? ' ' : '';
+            
+            wordSpan.style.setProperty('--delay', `${index * 0.1}s`);
+            wordSpan.appendChild(innerSpan);
+            
+            element.appendChild(wordSpan);
+            
+            if (space) {
+                element.appendChild(document.createTextNode(' '));
+            }
+        });
+    });
+
+    // Optional: Mouse Tilt interaction for hero section
+    const heroSections = document.querySelectorAll('.hero-section');
+    heroSections.forEach(hero => {
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { left, top, width, height } = hero.getBoundingClientRect();
+            
+            // Calculate relative position (-1 to 1)
+            const x = (clientX - left) / width - 0.5;
+            const y = (clientY - top) / height - 0.5;
+            
+            // Apply slight tilt to hero content
+            const content = hero.querySelector('.hero-content');
+            if (content) {
+                content.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg)`;
+            }
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            const content = hero.querySelector('.hero-content');
+            if (content) {
+                content.style.transform = `rotateY(0) rotateX(0)`;
+            }
+        });
+    });
+}
 
 /**
  * Navbar Toggle & Hamburger behavior
