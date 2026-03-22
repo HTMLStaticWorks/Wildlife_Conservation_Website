@@ -24,13 +24,27 @@
         body {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             background: linear-gradient(rgba(27, 67, 50, 0.9), rgba(27, 67, 50, 0.9)), url('../assets/images/hero.png');
             background-size: cover;
             background-position: center;
-            padding: 40px 20px;
             color: var(--text-color);
+            /* Hide scrollbar but keep functionality */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .auth-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 40px; /* Padding-top to avoid header */
+            width: 100%;
         }
 
         .auth-card {
@@ -129,10 +143,10 @@
 
         /* 🔥 MOBILE FIX (360px) */
         @media (max-width: 480px) {
-            body { padding: 20px; }
             .auth-card { padding: 30px 20px; border-radius: 20px; }
             .auth-header p { font-size: 0.95rem; }
             .navbar { height: 70px; }
+            .auth-wrapper { padding-top: 90px; }
         }
     </style>
 </head>
@@ -145,55 +159,57 @@
             </a>
         </div>
     </nav>
-    <div class="auth-card">
-        <div class="auth-header">
-            <p>Every donor makes impact.</p>
-        </div>
-
-        <form action="dashboard.html">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <p>Every donor makes impact.</p>
             </div>
-            <div class="form-group">
-                <label for="email">Donor Email</label>
-                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+    
+            <form action="dashboard.html">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Donor Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" class="form-control" placeholder="••••••••" required>
+                </div>
+    
+                <div class="terms-group">
+                    <input type="checkbox" id="terms" required checked>
+                    <label for="terms">I accept the Terms & Conditions.</label>
+                </div>
+    
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Register Now</button>
+            </form>
+    
+            <div class="social-auth">
+                <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                    <hr style="flex:1; border:0; border-top:1px solid #ddd;">
+                    <span style="font-size: 0.8rem; color: #999;">OR SIGN UP WITH</span>
+                    <hr style="flex:1; border:0; border-top:1px solid #ddd;">
+                </div>
+                <button class="btn-google">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" height="20" alt="Google">
+                    Google
+                </button>
+                <button class="btn-email-alt">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
             </div>
-            <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
-</div>
-
-<div class="form-group">
-    <label for="confirm_password">Confirm Password</label>
-    <input type="password" id="confirm_password" class="form-control" placeholder="••••••••" required>
-</div>
-
-            <div class="terms-group">
-                <input type="checkbox" id="terms" required checked>
-                <label for="terms">I accept the Terms & Conditions.</label>
+    
+            <div class="auth-links">
+                <p>Already a donor? <a href="login.html">Login</a></p>
             </div>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Register Now</button>
-        </form>
-
-        <div class="social-auth">
-            <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
-                <hr style="flex:1; border:0; border-top:1px solid #ddd;">
-                <span style="font-size: 0.8rem; color: #999;">OR SIGN UP WITH</span>
-                <hr style="flex:1; border:0; border-top:1px solid #ddd;">
-            </div>
-            <button class="btn-google">
-                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" height="20" alt="Google">
-                Google
-            </button>
-            <button class="btn-email-alt">
-                <i class="fas fa-envelope"></i> Email
-            </button>
-        </div>
-
-        <div class="auth-links">
-            <p>Already a donor? <a href="login.html">Login</a></p>
         </div>
     </div>
 

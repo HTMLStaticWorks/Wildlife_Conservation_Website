@@ -24,13 +24,27 @@
         body {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             background: linear-gradient(rgba(27, 67, 50, 0.9), rgba(27, 67, 50, 0.9)), url('../assets/images/hero.png');
             background-size: cover;
             background-position: center;
             color: var(--text-color);
-            padding: 20px;
+            /* Hide scrollbar but keep functionality */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .auth-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 40px; /* Padding-top to avoid header */
+            width: 100%;
         }
 
         .auth-card {
@@ -51,6 +65,27 @@
         .form-group { margin-bottom: 15px; text-align: left; }
         .form-control { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #ddd; background: #f9f9f9; }
         
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
         .social-auth { margin-top: 25px; display: flex; flex-direction: column; gap: 12px; }
         
         .btn-google {
@@ -100,7 +135,6 @@
         .auth-links { margin-top: 20px; font-size: 0.9rem; color: var(--text-light); }
         .auth-links a { color: var(--primary-color); font-weight: 600; text-decoration: underline; }
 
-        .forgot-password { text-align: right; margin-top: 5px; font-size: 0.85rem; }
         .forgot-password a { color: var(--text-light); }
 
         /* 🔥 DARK MODE OVERRIDES */
@@ -108,7 +142,7 @@
         [data-theme="dark"] .auth-header p { color: #52B788 !important; }
         [data-theme="dark"] .auth-links, [data-theme="dark"] .auth-links a { color: #c8d8d0; }
         [data-theme="dark"] .auth-links a { color: #D4A373 !important; }
-        [data-theme="dark"] .forgot-password a { color: #a8c4b8; }
+        [data-theme="dark"] .forgot-password a, [data-theme="dark"] .remember-me { color: #a8c4b8; }
         [data-theme="dark"] label { color: #ffffff; }
 
         [data-theme="dark"] .btn-primary { 
@@ -126,6 +160,7 @@
             .auth-card { padding: 30px 20px; border-radius: 20px; }
             .auth-header h1 { font-size: 1.5rem; }
             .navbar { height: 70px; }
+            .auth-wrapper { padding-top: 90px; }
         }
     </style>
 </head>
@@ -138,43 +173,53 @@
             </a>
         </div>
     </nav>
-    <div class="auth-card">
-        <div class="auth-header">
-            <p>Welcome back to the frontlines.</p>
-        </div>
-
-        <form action="dashboard.html">
-            <div class="form-group">
-                <label for="email">Donor Email</label>
-                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <p>Welcome back to the frontlines.</p>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="••••••••" required>
-                <div class="forgot-password">
-                    <a href="forgot-password.html">Forgot Password?</a>
+    
+            <form action="dashboard.html">
+                <div class="form-group">
+                    <label for="email">Donor Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Login Now</button>
-        </form>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
 
-        <div class="social-auth">
-            <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
-                <hr style="flex:1; border:0; border-top:1px solid #ddd;">
-                <span style="font-size: 0.8rem; color: #999;">OR SIGN IN WITH</span>
-                <hr style="flex:1; border:0; border-top:1px solid #ddd;">
-            </div>
-            <button class="btn-google">
-                <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" height="20" alt="Google">
-                Google
-            </button>
-            <button class="btn-email-alt">
-                <i class="fas fa-envelope"></i> Email
-            </button>
-        </div>
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <div class="forgot-password">
+                        <a href="forgot-password.html">Forgot Password?</a>
+                    </div>
+                </div>
 
-        <div class="auth-links">
-            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">Login Now</button>
+            </form>
+    
+            <div class="social-auth">
+                <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0;">
+                    <hr style="flex:1; border:0; border-top:1px solid #ddd;">
+                    <span style="font-size: 0.8rem; color: #999;">OR SIGN IN WITH</span>
+                    <hr style="flex:1; border:0; border-top:1px solid #ddd;">
+                </div>
+                <button class="btn-google">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" height="20" alt="Google">
+                    Google
+                </button>
+                <button class="btn-email-alt">
+                    <i class="fas fa-envelope"></i> Email
+                </button>
+            </div>
+    
+            <div class="auth-links">
+                <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+            </div>
         </div>
     </div>
 
