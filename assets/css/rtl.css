@@ -27,3 +27,13 @@
     left: auto;
     right: 0;
 }
+
+[dir="rtl"] .hamburger-dash {
+    margin-right: 0 !important;
+    margin-left: 15px !important;
+}
+
+[dir="rtl"] .close-sidebar {
+    right: auto !important;
+    left: 20px !important;
+}

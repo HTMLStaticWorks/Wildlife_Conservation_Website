@@ -9,7 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initForms();
     initHero3D();
+    initRTL();
 });
+
+/**
+ * RTL Toggle Functionality
+ */
+function initRTL() {
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
+    const root = document.documentElement;
+
+    // Check saved RTL state
+    const isRTL = localStorage.getItem('wildlife-rtl') === 'true';
+    if (isRTL) {
+        root.setAttribute('dir', 'rtl');
+    }
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentRTL = root.getAttribute('dir') === 'rtl';
+            const newRTL = !currentRTL;
+            
+            if (newRTL) {
+                root.setAttribute('dir', 'rtl');
+                localStorage.setItem('wildlife-rtl', 'true');
+            } else {
+                root.removeAttribute('dir');
+                localStorage.setItem('wildlife-rtl', 'false');
+            }
+        });
+    });
+}
 
 /**
  * 3D Text Effect for Hero Sections
@@ -112,6 +143,7 @@ function initNavbar() {
     // Handle Mobile Responsive Placements (Login Button & Theme Toggle)
     const handleMobileElements = () => {
         const loginBtn = document.querySelector('.login-btn');
+        const rtlToggle = document.querySelector('.rtl-toggle-main'); // Separating main from mobile
         if (!themeToggle || !navLinks) return;
 
         const isMobile = window.innerWidth <= 768;
@@ -123,6 +155,9 @@ function initNavbar() {
             }
             if (!navLinks.contains(themeToggle)) {
                 navLinks.appendChild(themeToggle);
+            }
+            if (rtlToggle && !navLinks.contains(rtlToggle)) {
+                navLinks.appendChild(rtlToggle);
             }
         } else {
             // Move back to header
@@ -139,6 +174,13 @@ function initNavbar() {
                         navRight.insertBefore(themeToggle, hamburgerChild);
                     } else {
                         navRight.appendChild(themeToggle);
+                    }
+                }
+                if (rtlToggle && !navRight.contains(rtlToggle)) {
+                    if (hamburgerChild) {
+                        navRight.insertBefore(rtlToggle, hamburgerChild);
+                    } else {
+                        navRight.appendChild(rtlToggle);
                     }
                 }
             }

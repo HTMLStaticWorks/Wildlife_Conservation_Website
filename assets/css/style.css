@@ -320,6 +320,48 @@ footer .footer-links a, footer p { color: var(--text-color) !important; }
     padding: 10px 24px !important;
 }
 
+.rtl-toggle-main {
+    background: none;
+    border: 1px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+.rtl-toggle-main:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+[data-theme="dark"] .rtl-toggle-main {
+    border-color: #1b4332;
+    color: #1b4332;
+}
+[data-theme="dark"] .rtl-toggle-main:hover {
+    background-color: #1b4332;
+    color: white;
+}
+
+.close-sidebar {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    z-index: 10;
+}
+[dir="rtl"] .close-sidebar { right: auto; left: 15px; }
+[data-theme="dark"] .close-sidebar { color: #fff; }
+
+@media (max-width: 768px) {
+    .close-sidebar { display: block; }
+}
+
 /* Card System */
 .cards-grid {
     display: grid;
