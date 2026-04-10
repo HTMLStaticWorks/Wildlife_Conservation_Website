@@ -44,20 +44,6 @@
             box-shadow: var(--shadow-soft);
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background: var(--accent-color);
-            border-radius: 50%;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item::before { display: none; }
-        }
     </style>
 </head>
 <body class="main-site">
@@ -125,14 +111,33 @@
     </section>
 
     <!-- Content Section -->
-    <section style="background-color: var(--white);" class="reveal">
+    <section style="background-color: var(--white);" class="reveal about-heart-section">
         <div class="container text-center">
             <h2>The Heart of the Savanna</h2>
             <p>Founded in 2012, Wildlife began as a small troop of rangers in East Africa. Today, we manage over 15 million hectares of land across three continents. Our approach is unique: we don't just protect animals; we build economies around their survival.</p>
-<img 
-    src="https://eco-tourism.expert/upload/medialibrary/63f/08rm3x408qwyxkb9g5q1eh06c51pjks7.jpeg" 
-    alt="Ranger" 
-    class="savanna-img">        </div>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin: 40px 0;" class="savanna-grid">
+                <!-- Image 1 -->
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/056/506/303/small/a-breathtaking-hyper-realisticgraph-of-a-reticulated-giraffe-in-the-heart-of-kenya-savanna-photo.jpg" alt="Ranger" class="savanna-img">
+                
+                <!-- Card 1 -->
+                <div class="savanna-card" style="background: var(--bg-color); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-soft); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 15px;"><i class="fas fa-paw"></i></div>
+                    <h3 style="margin-bottom: 15px; text-align: center; font-size: 1.4rem;">Community-Led Patrols</h3>
+                    <p style="margin: 0 auto; text-align: center; font-size: 0.95rem;">By training and employing local community members, we transform poachers into passionate protectors, creating a sustainable economy rooted in preservation.Our advanced network of acoustic sensors and satellite tracking helps rangers anticipate poaching hotspots and intervene before an incident occurs.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="savanna-card" style="background: var(--bg-color); padding: 30px; border-radius: 20px; box-shadow: var(--shadow-soft); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2rem; color: var(--accent-color); margin-bottom: 15px;"><i class="fas fa-satellite-dish"></i></div>
+                    <h3 style="margin-bottom: 15px; text-align: center; font-size: 1.4rem;">Next-Gen Tracking</h3>
+                    <p style="margin: 0 auto; text-align: center; font-size: 0.95rem;">Our advanced network of acoustic sensors and satellite tracking helps rangers anticipate poaching hotspots and intervene before an incident occurs.By training and employing local community members, we transform poachers into passionate protectors, creating a sustainable economy rooted in preservation</p>
+                </div>
+
+                <!-- Image 2 -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtIMV1KiiBfML76hOph5awbjyHViC1vNl3QA&s" alt="Savanna Wildlife" class="savanna-img">
+            </div>
+        </div>
     </section>
 
     <!-- Legacy Timeline -->

@@ -106,7 +106,7 @@ p {
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 var(--space-l);
+    padding: 0 40px;
 }
 
 section {
@@ -677,7 +677,7 @@ footer {
 }
 
 @media (max-width: 360px) {
-    .container { padding: 0 var(--space-m); }
+    .container { padding: 0 20px; }
     h1 { font-size: 2rem; }
 }
 /* --- Responsive Grid & Layout Fixes --- */
@@ -1658,77 +1658,184 @@ img {
     opacity: 0.7;
 }
 
-/* --- Hero 3D Text Effects --- */
+/* --- Hero Text Animation --- */
 .hero-content h1, 
 .hero-content p {
-    perspective: 1000px;
+    perspective: 1200px;
+}
+
+/* Slide-up + fade-in entrance keyframes */
+@keyframes heroWordEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) rotateX(-20deg) scale(0.9);
+        filter: blur(4px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) rotateX(4deg) scale(1.02);
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg) scale(1);
+        filter: blur(0px);
+    }
+}
+
+/* Green shimmer sweep keyframes */
+@keyframes greenShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Gentle float after entrance */
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0) rotateX(0deg); }
+    40% { transform: translateY(-6px) rotateX(3deg); }
+    70% { transform: translateY(-3px) rotateX(-2deg); }
 }
 
 .hero-3d-word {
     display: inline-block;
     position: relative;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
     cursor: default;
-    margin: 0 4px; /* Space between words */
-}
-
-/* Base 3D State */
-.hero-3d-word span {
-    display: inline-block;
-    color: inherit;
-    text-shadow: 
-        1px 1px 0 rgba(0,0,0,0.2),
-        2px 2px 0 rgba(0,0,0,0.2),
-        3px 3px 0 rgba(0,0,0,0.2),
-        4px 4px 0 rgba(0,0,0,0.2),
-        5px 5px 15px rgba(0,0,0,0.4);
-    transition: var(--transition);
-}
-
-/* Organic Floating Animation (Swaying like leaves/grass) */
-@keyframes wordFloat {
-    0%, 100% { transform: translateY(0) rotateX(0deg) rotateZ(0deg) scale(1); }
-    25% { transform: translateY(-15px) rotateX(12deg) rotateZ(3deg) scale(1.03); }
-    50% { transform: translateY(-5px) rotateX(5deg) rotateZ(-2deg) scale(0.97); }
-    75% { transform: translateY(-12px) rotateX(-8deg) rotateZ(1deg) scale(1.01); }
-}
-
-.hero-3d-word.animated {
-    animation: wordFloat 4s ease-in-out infinite;
+    margin: 0 3px;
+    opacity: 0;
+    animation: heroWordEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-delay: var(--delay);
 }
 
-/* Interaction */
+/* After entrance, switch to gentle float */
+.hero-3d-word.animated {
+    animation:
+        heroWordEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+        heroFloat 5s ease-in-out calc(var(--delay) + 0.7s) infinite;
+}
+
+/* Inner span — green shimmer on text */
+.hero-3d-word span {
+    display: inline-block;
+    color: inherit;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #52B788 30%,
+        #D4A373 50%,
+        #52B788 70%,
+        #ffffff 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: greenShimmer 4s linear calc(var(--delay) + 1s) infinite;
+    text-shadow: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover: pop + glow */
 .hero-3d-word:hover {
-    transform: translateZ(50px) scale(1.1);
+    transform: translateY(-4px) scale(1.08);
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-3d-word:hover span {
-    color: var(--accent-color);
-    text-shadow: 
-        0 1px 0 #52b788,
-        0 2px 0 #52b788,
-        0 3px 0 #46a578,
-        0 4px 0 #3b9068,
-        0 5px 10px rgba(82, 183, 136, 0.5);
+    background: linear-gradient(90deg, #52B788, #76D9A8, #52B788);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(82, 183, 136, 0.7));
+    animation: greenShimmer 1.5s linear infinite;
 }
 
-/* Wildlife Related Glow */
+/* Glow halo on hover */
 .hero-3d-word::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(82, 183, 136, 0.2) 0%, transparent 70%);
-    transform: translate(-50%, -50%) translateZ(-1px);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse, rgba(82, 183, 136, 0.35) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.4s;
     pointer-events: none;
+    border-radius: 8px;
 }
 
 .hero-3d-word:hover::after {
     opacity: 1;
+}
+
+/* Header Desktop Alignment Fix for 1024px and 1440px */
+@media (min-width: 1024px) {
+    .nav-actions {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-actions .login-btn,
+    .nav-actions .rtl-toggle-main,
+    .nav-actions .theme-toggle {
+        height: 44px !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        box-sizing: border-box;
+        vertical-align: middle;
+    }
+    
+    .nav-actions .theme-toggle {
+        width: 44px !important;
+        padding: 0 !important;
+    }
+}
+
+/* About Page - The Heart of the Savanna */
+.savanna-grid {
+    grid-auto-rows: 1fr;
+}
+
+.savanna-img, .savanna-card {
+    height: 100% !important;
+    min-height: 250px;
+}
+
+.savanna-img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    section.about-heart-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .about-heart-section p {
+        margin-bottom: 20px;
+    }
+    .savanna-img, .savanna-card {
+        max-height: 400px;
+        height: 400px !important;
+    }
+    .savanna-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    section.about-heart-section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    .savanna-img, .savanna-card {
+        max-height: 500px;
+        height: 500px !important;
+    }
 }
