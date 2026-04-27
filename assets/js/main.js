@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initScrollReveal();
     initForms();
-    initHero3D();
+    // initHero3D();
     initRTL();
 });
 
