@@ -32,18 +32,11 @@
             overflow: hidden;
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
-            text-align: left;
-            align-items: flex-start;
-        }
-
-        .blog-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-            text-align: left;
-            align-items: flex-start;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .blog-card:hover {
@@ -59,15 +52,20 @@
 
         .blog-content {
             padding: var(--space-l);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            width: 100%;
         }
 
         .blog-content h3 {
-            text-align: left;
+            text-align: center;
             margin: 0 0 10px;
         }
 
         .blog-content p {
-            text-align: left;
+            text-align: center;
             margin: 0 0 20px;
         }
 
@@ -76,6 +74,7 @@
             color: var(--text-light);
             margin-bottom: 10px;
             display: block;
+            text-align: center;
         }
     </style>
 </head>
@@ -134,106 +133,102 @@
         <div class="cards-grid">
 
             <!-- Card 1 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="../assets/images/blog1.png" class="blog-img" style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="../assets/images/blog1.png" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">March 12, 2026 | Species Spotlight</span>
                     <h3>Hope for the Little</h3>
                     <p>Meeting 'Mara', the orphaned elephant calf, and how our rescue center in Kenya is helping her
                         find.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="../assets/images/hero.png" class="blog-img" style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="../assets/images/hero.png" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">March 8, 2026 | Innovation</span>
                     <h3>Eyes in the Canopy</h3>
                     <p>The first successful deployment of our AI camera grid to monitor cryptic leopards in the Indian.
                     </p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="../assets/images/service.png" class="blog-img" style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="../assets/images/service.png" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">March 1, 2026 | Field Notes</span>
                     <h3>With the Guardians</h3>
                     <p>Patrolling the Serengeti at 3 AM. The challenges and triumphs of the men and women protecting
                         our.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="blog-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNQaEeV1CUN8ffKE4qlKMiIFsEXlXvcfX7tg&s"
-                    class="blog-img" style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+                    class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">Dec 8, 2022 | Motivation</span>
                     <h3>Images in the Jumba</h3>
                     <p>Successful deployment of our camera grid to monitor cryptic leopards are powerful.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 5 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2" class="blog-img"
-                    style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">Jan 15, 2023 | Conservation</span>
                     <h3>The Giants</h3>
                     <p>Protecting elephant herds through advanced tracking systems and ranger patrols.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 6 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5" class="blog-img"
-                    style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">Feb 10, 2023 | Nature</span>
                     <h3>Green Forests</h3>
                     <p>Community-driven reforestation projects restoring lost ecosystems and wildlife habitats.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 7 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" class="blog-img"
-                    style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">Mar 5, 2023 | Wildlife</span>
                     <h3>Tracking the Kings</h3>
                     <p>Using GPS collars to monitor lion movements and reduce wildlife sanctuary conflicts.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
             <!-- Card 8 -->
-            <div class="blog-card" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" class="blog-img"
-                    style="height:200px; object-fit:cover;">
-                <div class="blog-content" style="display:flex; flex-direction:column; flex:1;">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" class="blog-img">
+                <div class="blog-content">
                     <span class="blog-meta">Apr 2, 2023 | Endangered</span>
                     <h3>The Last Rhinos</h3>
                     <p>Combating poaching with surveillance drones and dedicated protection teams.</p>
                     <a href="#" class="btn btn-primary"
-                        style="margin-top:auto; align-self:center; padding:10px 20px;">Read Story</a>
+                        style="margin-top:auto; padding:10px 20px;">Read Story</a>
                 </div>
             </div>
 
